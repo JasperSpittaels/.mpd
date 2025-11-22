@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Unified Streaming Platform  (version=1.12.1-28247) -->
+<MPD
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="urn:mpeg:dash:schema:mpd:2011"
+  xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-DASH_schema_files/DASH-MPD.xsd"
+  type="static"
+  mediaPresentationDuration="PT2M10.320S"
+  maxSegmentDuration="PT8S"
+  minBufferTime="PT10S"
+  profiles="urn:mpeg:dash:profile:isoff-live:2011">
+  <Period
+    id="1"
+    duration="PT2M10.320S">
+    <BaseURL>dash/</BaseURL>
+    <AdaptationSet
+      id="1"
+      group="1"
+      contentType="audio"
+      segmentAlignment="true"
+      audioSamplingRate="48000"
+      mimeType="audio/mp4"
+      codecs="mp4a.40.2"
+      startWithSAP="1">
+      <AudioChannelConfiguration
+        schemeIdUri="urn:mpeg:dash:23003:3:audio_channel_configuration:2011"
+        value="2" />
+      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main" />
+      <SegmentTemplate
+        timescale="48000"
+        initialization="WO_NTR_8153362_v42-$RepresentationID$.dash"
+        media="WO_NTR_8153362_v42-$RepresentationID$-$Time$.dash">
+        <SegmentTimeline>
+          <S t="0" d="384000" r="15" />
+          <S d="111616" />
+          <S d="3072" />
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation
+        id="audio=128011"
+        bandwidth="128011">
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet
+      id="2"
+      group="2"
+      contentType="video"
+      par="16:9"
+      minBandwidth="513067"
+      maxBandwidth="1130515"
+      maxWidth="960"
+      maxHeight="540"
+      segmentAlignment="true"
+      sar="1:1"
+      mimeType="video/mp4"
+      startWithSAP="1">
+      <Role schemeIdUri="urn:mpeg:dash:role:2011" value="main" />
+      <SegmentTemplate
+        timescale="12800"
+        initialization="WO_NTR_8153362_v42-$RepresentationID$.dash"
+        media="WO_NTR_8153362_v42-$RepresentationID$-$Time$.dash">
+        <SegmentTimeline>
+          <S t="0" d="102400" r="15" />
+          <S d="29696" />
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation
+        id="video=513067"
+        bandwidth="513067"
+        width="640"
+        height="360"
+        codecs="avc1.42C01E"
+        scanType="progressive">
+      </Representation>
+      <Representation
+        id="video=1130515"
+        bandwidth="1130515"
+        width="960"
+        height="540"
+        codecs="avc1.4D401F"
+        scanType="progressive">
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>
